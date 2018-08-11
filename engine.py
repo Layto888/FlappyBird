@@ -20,7 +20,6 @@ class FlappyBird(DefaultEngine):
         """ remove old sprites if necessary """
         if self.all_sprites:
             self.all_sprites.empty()
-        self.score = 0
         # create two pipes: 2 x (top+bottom)
         self.pipe.append(self.new_pipes(950))
         self.pipe.append(self.new_pipes(1400))
