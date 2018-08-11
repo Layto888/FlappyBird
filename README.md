@@ -2,7 +2,9 @@
 Demo 4: Flappy Bird example
 ---------------------------
 @Author: Amardjia Amine
+
 @Date: 10/08/18
+
 @Version: 0.0.1 (beta)
 
 A simple 2D game with laylib and  pygame to show how fast and simple
