@@ -6,7 +6,6 @@ from settings import *
 
 class FlappyBird(DefaultEngine):
     # main engine example
-
     def __init__(self):
         super().__init__()
         self.all_sprites = pg.sprite.Group()
