@@ -4,7 +4,6 @@ from laylib import DefaultEngine
 from random import randint
 from settings import *
 
-
 class FlappyBird(DefaultEngine):
     # main engine example
 
