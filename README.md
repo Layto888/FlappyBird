@@ -1,7 +1,7 @@
 # FlappyBird
 Demo 4: Flappy Bird using laylib-1.0 example
 ---------------------------
-- Version: 0.0.1 (beta)
+- Version: 0.0.1 (beta) by Amardjia Amine.
 
 A simple 2D game with laylib and  pygame to show how fast and simple
 is to create a multimedia application using the laylib package.
