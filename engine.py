@@ -107,23 +107,20 @@ class BasicBody(pg.sprite.Sprite):
         self.pos = vect2d(pos)
         self.rect.center = vect2d(pos)
 
-
 class Background(BasicBody):
     def __init__(self, image, pos=vect2d(BKGRND_POS)):
         super().__init__(image, pos)
-
 
 class Ground(BasicBody):
     def __init__(self, image, pos):
         super().__init__(image, pos)
         self.vel = vect2d(GRND_VEL, 0.0)
-
+        
     def update(self, dt):
         if self.pos.x < 0:
             self.pos.x = GRND_START_POS
         self.pos.x -= self.vel.x * dt
         self.rect.center = self.pos
-
 
 class Pipe(BasicBody):
     def __init__(self, image, pos=(0.0, 0.0)):
@@ -138,7 +135,7 @@ class Pipe(BasicBody):
     @property
     def x(self):
         return self.pos.x
-
+    
     @property
     def y(self):
         return self.pos.y
@@ -150,7 +147,6 @@ class Pipe(BasicBody):
     @y.setter
     def y(self, value):
         self.rect.y = value
-
 
 class Bird(pg.sprite.Sprite):
     def __init__(self, image, fx):
