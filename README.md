@@ -8,4 +8,4 @@ is to create a multimedia application using the laylib package.
 Note that the initialization of pygame and the resources management
 are completely transparent and automatic for the developer.
 
-![](https://github.com/Layto888/FlappyBird/blob/master/ScreenShot_20180811225636.png?raw=true)
+![](https://github.com/Layto888/FlappyBird/blob/master/data/ScreenShot_20180811225636.png)
