@@ -1,5 +1,5 @@
 # FlappyBird
-Demo 4: Flappy Bird using laylib-1.0 example
+Demo 4: Flappy Bird using laylib-1.0 
 ---------------------------
 - Version: 0.0.1 (beta) by Amardjia Amine.
 
