@@ -4,8 +4,10 @@ from laylib import DefaultEngine
 from random import randint
 from settings import *
 
+
 class FlappyBird(DefaultEngine):
     """main engine example """
+
     def __init__(self):
         super().__init__()
         self.all_sprites = pg.sprite.Group()
@@ -49,9 +51,9 @@ class FlappyBird(DefaultEngine):
         if not self.playing and self.running:
             self.new_demo()
         # recycle the pipes
-        if self.pipe[0][DOWN].x < 0:
+        if self.pipe[0][DOWN].x < -50:
             self.reset_pipe(self.pipe[0], PIPE_X)
-        if self.pipe[1][DOWN].x < 0:
+        if self.pipe[1][DOWN].x < -50:
             self.reset_pipe(self.pipe[1], PIPE_X)
         # see if the bird hurt any pipe
         if self.collide(self.bird, self.pipe[0]):
@@ -105,20 +107,23 @@ class BasicBody(pg.sprite.Sprite):
         self.pos = vect2d(pos)
         self.rect.center = vect2d(pos)
 
+
 class Background(BasicBody):
     def __init__(self, image, pos=vect2d(BKGRND_POS)):
         super().__init__(image, pos)
+
 
 class Ground(BasicBody):
     def __init__(self, image, pos):
         super().__init__(image, pos)
         self.vel = vect2d(GRND_VEL, 0.0)
-        
+
     def update(self, dt):
         if self.pos.x < 0:
             self.pos.x = GRND_START_POS
         self.pos.x -= self.vel.x * dt
         self.rect.center = self.pos
+
 
 class Pipe(BasicBody):
     def __init__(self, image, pos=(0.0, 0.0)):
@@ -133,7 +138,7 @@ class Pipe(BasicBody):
     @property
     def x(self):
         return self.pos.x
-    
+
     @property
     def y(self):
         return self.pos.y
@@ -145,6 +150,7 @@ class Pipe(BasicBody):
     @y.setter
     def y(self, value):
         self.rect.y = value
+
 
 class Bird(pg.sprite.Sprite):
     def __init__(self, image, fx):
@@ -158,14 +164,14 @@ class Bird(pg.sprite.Sprite):
         self.vel = vect2d(0.0, 0.0)
         self.acc = vect2d(0.0, BIRD_GRAVITY)
         self.last_update = pg.time.get_ticks()
-        self.frame_rate = 120
+        self.frame_rate = 90
         self.alive = True
         self.wing = fx
 
     def update(self, dt):
         # fly and fall
         self.vel += self.acc
-        self.pos += self.vel + 0.5 * self.acc
+        self.pos += (self.vel + 0.5 * self.acc) * dt
         self.rect.center = self.pos
         # anim sprites
         if self.alive:
